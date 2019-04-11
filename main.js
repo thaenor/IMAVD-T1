@@ -10,34 +10,25 @@ var ctx = canvasElement.getContext("2d");
 var rotation = 0;
 
 
-/*
-fabric.Image.fromURL('my_image.png', function(oImg) {
+fabric.Image.fromURL('http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png', function(oImg) {
   // scale image down, and flip it, before adding it onto canvas
-  oImg.scale(0.5).set('flipX, true);
+  oImg.scale(0.5).set('flipX, true');
   canvas.add(oImg);
-});
-*/
+},{ crossOrigin: 'Anonymous' });
 
-var imgInstance = new fabric.Image(imgElement, {
-  left: 100,
-  top: 100,
-  angle: 30,
-  opacity: 0.85
-});
 
 // create a rectangle object
-var rect = new fabric.Rect({
-  left: 100,
-  top: 100,
-  fill: 'red',
-  width: 20,
-  height: 20,
-  angle: 45,
-});
+// var rect = new fabric.Rect({
+//   left: 100,
+//   top: 100,
+//   fill: 'red',
+//   width: 20,
+//   height: 20,
+//   angle: 45,
+// });
 
 // "add" rectangle onto canvas
-canvas.add(rect);
-//canvas.add(imgInstance);
+// canvas.add(rect);
 
 
 
