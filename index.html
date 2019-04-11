@@ -62,35 +62,38 @@
     </div>
 
     <div class="section">
-      <div class="col grid_6_of_12">
+      <div class="col grid_3_of_12">
         <ul>
           <li>
             <label>levels:</label>
           </li>
-          <li><label>Red: </label> <input type="range" min="0" max="255" /></li>
+          <li><label>Red: </label> <input type="range" id="red-slider" min="0" max="255" /></li>
           <li>
-            <label>Green: </label> <input type="range" min="0" max="255" />
+            <label>Green: </label> <input type="range" id="green-slider" min="0" max="255" />
           </li>
           <li>
-            <label>Blue: </label> <input type="range" min="0" max="255" />
+            <label>Blue: </label> <input type="range" id="blue-slider" min="0" max="255" />
           </li>
         </ul>
       </div>
-      <div class="col grid_6_of_12">
+      <div class="col grid_3_of_12">
         <ul>
           <li><label>Zoom: </label><input type="number" id="zoomLevel" /></li>
           <li>
             <label>Brightness: </label>
-            <input type="range" min="-100" max="100" />
+            <input type="range" id="brightness-slider" min="-100" max="100" />
           </li>
           <li>
             <label>Contrast: </label>
-            <input type="range" min="-100" max="100" />
+            <input type="range" id="contrast-slider" min="-100" max="100" />
           </li>
           <li>
-            <label>Gamma: </label> <input type="range" min="0.2" max="5" />
+            <label>Gamma: </label> <input type="range" id="gamma-slider" min="0.2" max="5" />
           </li>
         </ul>
+      </div>
+      <div class="col grid_3_of_12">
+        ...add more buttons here
       </div>
     </div>
 

@@ -77,6 +77,39 @@ function watchColorPicker(event) {
   }
 
 }
+
+/** Slider Events */
+
+function onChangeColorSlider(e) {
+  console.log("input change");
+}
+
+function onChangeZoom(e) {
+  console.log("input change");
+}
+
+function onChangeBrightness(e) {
+  console.log("input change");
+}
+
+function onChangeContrast(e){
+  console.log("input change");
+}
+
+function onChangeGamma(e) {
+  console.log("input change");
+}
+
+let redSlider = document.getElementById('red-slider').addEventListener('change', onChangeColorSlider, false);
+let greenSlider = document.getElementById('green-slider').addEventListener('change', onChangeColorSlider, false);
+let blueSlider = document.getElementById('blue-slider').addEventListener('change', onChangeColorSlider, false);
+
+let zoomLevel = document.getElementById('zoomLevel').addEventListener('change', onChangeZoom, false);
+let brightnessSlider = document.getElementById('brightness-slider').addEventListener('change', onChangeBrightness, false);
+let contrastSlider = document.getElementById('contrast-slider').addEventListener('change', onChangeContrast, false);
+let gammaSlider = document.getElementById('gamma-slider').addEventListener('change', onChangeGamma, false);
+
+
 /** END */
 
 
