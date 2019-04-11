@@ -1,9 +1,14 @@
 body {
   padding: 20px;
+  font-family: 'Roboto-light'
 }
 
 canvas {
-  border: 1px solid pink;
+  border: 1px solid black;
+}
+
+.canvas-container {
+  padding-top: 20px;
 }
 
 .top-menu-container {
