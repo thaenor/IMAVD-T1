@@ -2,7 +2,7 @@
 var canvasWidth = 300;
 var canvasHeight = 150;
 var canvas = new fabric.Canvas('c');
-var imgElement = document.getElementById('my-image');
+var imgElement = document.getElementById('main-image');
 // get references to the html canvas element & its context
 // https://stackoverflow.com/questions/26776436/get-rgb-values-of-pixel-of-image-in-fabric-js-on-mouse-move
 var canvasElement = document.getElementById('c');

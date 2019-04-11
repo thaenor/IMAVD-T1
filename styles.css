@@ -1,7 +1,22 @@
-html {
-  padding-left: 20px;
+body {
+  padding: 20px;
 }
 
 canvas {
   border: 1px solid pink;
+}
+
+.top-menu-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-column-gap: 20px;
+}
+
+.center {
+  width: 50%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
 }

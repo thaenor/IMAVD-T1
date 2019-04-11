@@ -1,27 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>IMAVD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.7.0/fabric.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./grid.css" />
+  </head>
 
-<head>
-  <title>IMAVD</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-  <meta content="utf-8" http-equiv="encoding">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.7.0/fabric.min.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-  <link rel="stylesheet" href="./styles.css">
-</head>
+  <body>
+    <div class="top-menu-container ">
+      <button id="undobtn">Undo</button>
+      <button id="redobtn">Redo</button>
+      <button id="savebtn">save</button>
+    </div>
 
-<body>
+    <!-- <img
+      id="main-image"
+      src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png"
+      width="100px"
+      height="100px"
+      alt="your image"
+    /> -->
 
-  <img id="my-image" src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png" width="100px" height="100px" alt="myImage" />
+    <div class="section">
+      <div class="col grid_10_of_12">
+        <div class="center">
+          <canvas id="c"></canvas>
+          <p>
+              <input type="color" id="colorPicker" />
+              <label id="myColor">color</label>
+              <label id="ColorFinderResponse"></label>
+            </p>
+    
+            <p>selected color: <label id="selectedColor"></label></p>
+        </div>
+      </div>
 
-  <canvas id="c"></canvas>
+      <div class="col grid_2_of_12">
+        <div>
+          <label>choose an image: </label>
+          <input type="file" id="fileSelector" />
+        </div>
+        <h3>File Details:</h3>
+        <ul>
+          <li>name:</li>
+          <li>size:</li>
+          <li>location:</li>
+        </ul>
+      </div>
+    </div>
 
-  <p>Does the image have color <input type="color" id="colorPicker" /> <label id="myColor"></label> ? <label id="ColorFinderResponse"></label></p>
+    <div class="section">
+      <div class="col grid_6_of_12">
+        <ul>
+          <li>
+            <label>levels</label>
+          </li>
+          <li><label>Red: </label> <input type="range" min="0" max="255" /></li>
+          <li>
+            <label>Green: </label> <input type="range" min="0" max="255" />
+          </li>
+          <li>
+            <label>Blue: </label> <input type="range" min="0" max="255" />
+          </li>
+        </ul>
+      </div>
+      <div class="col grid_6_of_12">
+        <ul>
+          <li><label>Zoom: </label><input type="number" id="zoomLevel" /></li>
+          <li>
+            <label>Brightness: </label>
+            <input type="range" min="-100" max="100" />
+          </li>
+          <li>
+            <label>Contrast: </label>
+            <input type="range" min="-100" max="100" />
+          </li>
+          <li>
+            <label>Gamma: </label> <input type="range" min="0.2" max="5" />
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  <p>selected color: <label id="selectedColor"></label></p>
+    <!--<iframe
+      style="width:100%; height:1000px;"
+      id="miniPaint"
+      src="https://viliusle.github.io/miniPaint/"
+    ></iframe>-->
 
-  <script type="text/javascript" src="./main.js"></script>
-</body>
-
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
 </html>
