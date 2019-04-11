@@ -1,0 +1,40 @@
+/* Section */
+.section {
+    clear: both;
+    margin: 0px;
+    padding: 0px;
+  }
+  /* Column */
+  .col {
+    background: #eee;
+    display: block;
+    float:left;
+    margin: 1% 0 1% 1.6%;
+  }
+  .col:first-child { margin-left: 0 !important; }
+  
+  /* Row */
+  .row:before,
+  .row:after { content:""; display:table; }
+  .row:after { clear:both;}
+  .row { zoom:1; /* For IE 6/7 */ }
+  
+  /* Grid */
+  .grid_1_of_12{ width: 6.867% }
+  .grid_2_of_12{ width: 15.333% }
+  .grid_3_of_12{ width: 23.8% }
+  .grid_4_of_12{ width: 32.267% }
+  .grid_5_of_12{ width: 40.733% }
+  .grid_6_of_12{ width: 49.2% }
+  .grid_7_of_12{ width: 57.667% }
+  .grid_8_of_12{ width: 66.133% }
+  .grid_9_of_12{ width: 74.6% }
+  .grid_10_of_12{ width: 83.067% }
+  .grid_11_of_12{ width: 91.533% }
+  .grid_12_of_12{ width: 100% }
+  
+  /* Full Width below 768 pixels */
+  @media only screen and (max-width: 768px) {
+    .col {  margin: 1% 0 1% 0%; }
+    [class*='grid_'] { width: 100%; }
+  }
