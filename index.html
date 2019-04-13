@@ -10,6 +10,11 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.7.0/fabric.min.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
@@ -38,12 +43,12 @@
         <div class="center canvas-container">
           <canvas id="c"></canvas>
           <p>
-              <input type="color" id="colorPicker" />
-              <label id="myColor">color</label>
-              <label id="ColorFinderResponse"></label>
-            </p>
-    
-            <p>selected color: <label id="selectedColor"></label></p>
+            <input type="color" id="colorPicker" />
+            <label id="myColor">color</label>
+            <label id="ColorFinderResponse"></label>
+          </p>
+
+          <p>selected color: <label id="selectedColor"></label></p>
         </div>
       </div>
 
@@ -67,12 +72,17 @@
           <li>
             <label>levels:</label>
           </li>
-          <li><label>Red: </label> <input type="range" id="red-slider" min="0" max="255" /></li>
           <li>
-            <label>Green: </label> <input type="range" id="green-slider" min="0" max="255" />
+            <label>Red: </label>
+            <input type="range" id="red-slider" min="0" max="255" />
           </li>
           <li>
-            <label>Blue: </label> <input type="range" id="blue-slider" min="0" max="255" />
+            <label>Green: </label>
+            <input type="range" id="green-slider" min="0" max="255" />
+          </li>
+          <li>
+            <label>Blue: </label>
+            <input type="range" id="blue-slider" min="0" max="255" />
           </li>
         </ul>
       </div>
@@ -88,12 +98,14 @@
             <input type="range" id="contrast-slider" min="-100" max="100" />
           </li>
           <li>
-            <label>Gamma: </label> <input type="range" id="gamma-slider" min="0.2" max="5" />
+            <label>Gamma: </label>
+            <input type="range" id="gamma-slider" min="0.2" max="5" />
           </li>
         </ul>
       </div>
       <div class="col grid_3_of_12">
         ...add more buttons here
+        <button id="GrayscaleFilterBtn">Grayscale</button>
       </div>
     </div>
 
