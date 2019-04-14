@@ -15,6 +15,11 @@
       src="http://cdnjs.cloudflare.com/ajax/libs/camanjs/4.0.0/caman.full.min.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      type="text/javascript"
+      src="http://evanw.github.io/glfx.js/glfx.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
@@ -91,11 +96,11 @@
           <li><label>Zoom: </label><input type="number" id="zoomLevel" /></li>
           <li>
             <label>Brightness: </label>
-            <input type="range" id="brightness-slider" min="-100" max="100" />
+            <input type="range" id="brightness-slider" min="-1" max="1" step="0.1"/>
           </li>
           <li>
             <label>Contrast: </label>
-            <input type="range" id="contrast-slider" min="-100" max="100" />
+            <input type="range" id="contrast-slider" min="0" max="100" step="1" />
           </li>
           <li>
             <label>Gamma: </label>
@@ -104,8 +109,16 @@
         </ul>
       </div>
       <div class="col grid_3_of_12">
-        ...add more buttons here
         <button id="GrayscaleFilterBtn">Grayscale</button>
+        <hr/>
+        <div>
+          <label for="textToCanvas">text:</label>
+          <input type="text" name="textToCanvas" id="textToCanvasInput">
+          <label for="textToCanvasSize">size:</label>
+          <input type="number" name="textToCanvasSize" id="textToCanvasSize">
+          <button id="textToCanvasBtn">Add Text</button>
+        </div>
+        <hr/>
       </div>
     </div>
 
@@ -116,5 +129,6 @@
     ></iframe>-->
 
     <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="./events.js"></script>
   </body>
 </html>
