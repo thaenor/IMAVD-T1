@@ -128,6 +128,7 @@ canvas.on('mouse:move', function(e) {
       new fabric.Image.filters.Brightness({ brightness: brightnessVal }));
     imgInstance.applyFilters();
     canvas.renderAll();
+    document.querySelector('#brightness-level').innerHTML = `${imageSettings.brightness}`;
   }
   
   //TODO: figure out the best min and max values
@@ -138,10 +139,17 @@ canvas.on('mouse:move', function(e) {
       new fabric.Image.filters.Contrast({ contrast: contrastVal }));
     imgInstance.applyFilters();
     canvas.renderAll();
+    document.querySelector('#contrast-level').innerHTML = `${imageSettings.contrast}`;
   }
   
   function onChangeGamma(e) {
-    console.log('input change');
+    let gammaVal = document.querySelector('#gamma-slider').value;
+    imageSettings.gamma = gammaVal;
+    imgInstance.filters.push(
+      new fabric.Image.filters.Gamma({ gamma: gammaVal, brightness: imageSettings.contrast }));
+    imgInstance.applyFilters();
+    canvas.renderAll();
+    document.querySelector('#gamma-level').innerHTML = `${imageSettings.gamma}`;
   }
   
   let redSlider = document
