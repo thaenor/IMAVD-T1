@@ -1,4 +1,4 @@
-// @ts-check
+//@ts-check
 // get references to the html canvas element & its context
 // https://stackoverflow.com/questions/26776436/get-rgb-values-of-pixel-of-image-in-fabric-js-on-mouse-move
 const canvas = new fabric.Canvas('c');
@@ -24,12 +24,12 @@ let imgElement = new Image();
 let imgInstance;
 imgElement.crossOrigin = 'Anonymous';
 imgElement.src =
-  'http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/cat-icon.png';
+  'http://placekitten.com/96/140';
 imgElement.onload = function() {
   imgInstance = new fabric.Image(imgElement, {
-    left: 10,
-    top: 10,
-    angle: 30,
+    left: 150,
+    top: 75,
+    angle: 0,
     opacity: 0.85
   });
   imgInstance.scale(0.5);
