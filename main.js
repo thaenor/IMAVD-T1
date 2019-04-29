@@ -1,49 +1,52 @@
-//@ts-check
-// get references to the html canvas element & its context
-// https://stackoverflow.com/questions/26776436/get-rgb-values-of-pixel-of-image-in-fabric-js-on-mouse-move
-const canvas = new fabric.Canvas('c');
-const canvasElement = document.getElementById('c');
-const ctx = canvasElement.getContext('2d');
-const canvasWidth = 300;
-const canvasHeight = 150;
-const imageSettings = {
-  rotation: 0,
-  brightness: 0,
-  contrast: 0,
-  gamma: 0,
-  zoom: 100
-};
-const imageData = {
-  name: '',
-  location: '',
-  size: 0,
-  createDate: 0
-};
+// Modules to control application life and create native browser window
+const {app, BrowserWindow} = require('electron')
 
-let imgElement = new Image();
-let imgInstance;
-imgElement.crossOrigin = 'Anonymous';
-imgElement.src =
-  'http://placekitten.com/96/140';
-imgElement.onload = function() {
-  imgInstance = new fabric.Image(imgElement, {
-    left: 150,
-    top: 75,
-    angle: 0,
-    opacity: 0.85
-  });
-  imgInstance.scale(0.5);
-  canvas.add(imgInstance);
-};
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let mainWindow
 
-// create a rectangle object
-var rect = new fabric.Rect({
-  left: 100,
-  top: 100,
-  fill: 'red',
-  width: 20,
-  height: 20,
-  angle: 45
-});
+function createWindow () {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({
+    width: 1024,
+    height: 768,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
 
-canvas.add(rect);
+  // and load the index.html of the app.
+  mainWindow.loadFile('index.html')
+
+  // Open the DevTools.
+  mainWindow.webContents.openDevTools()
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null
+  })
+}
+
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', createWindow)
+
+// Quit when all windows are closed.
+app.on('window-all-closed', function () {
+  // On macOS it is common for applications and their menu bar
+  // to stay active until the user quits explicitly with Cmd + Q
+  if (process.platform !== 'darwin') app.quit()
+})
+
+app.on('activate', function () {
+  // On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (mainWindow === null) createWindow()
+})
+
+// In this file you can include the rest of your app's specific main process
+// code. You can also put them in separate files and require them here.
