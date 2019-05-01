@@ -7,3 +7,4 @@ require('./events/Filters');
 require('./events/Helper');
 require('./events/LevelSliders');
 require('./events/ZoomPan');
+require('./events/FileLoader');
