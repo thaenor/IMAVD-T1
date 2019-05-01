@@ -9,21 +9,22 @@ document.getElementById('fileSelector').addEventListener('change', event => {
   imageData.name;
   document.querySelector('#fileSize').innerHTML = formatBytes(file.size, 'MB');
   document.querySelector('#fileLocation').innerHTML = file.path;
+  document.querySelector('#fileType').innerHTML = file.path.split('.').pop();
   document.querySelector(
     '#fileLastMod'
   ).innerHTML = file.lastModifiedDate.toLocaleString();
 
-  const imageBuffer = fs.readFileSync(file.path);
-  let importedImage = new Image();
-  importedImage.src = `data:image/png;base64,${imageBuffer.toString('base64')}`;
-  document.querySelector('body').appendChild(importedImage);
-  imagesInCanvas.push(new fabric.Image(importedImage, {
-    left: 0,
-    top: 0,
-    angle: 0
-  }));
-  console.log("c", imagesInCanvas);
-  canvas.renderAll();
+  // NOTE : this code works, but it doesn't add the image to the canvas yet
+  // const imageBuffer = fs.readFileSync(file.path);
+  // let importedImage = new Image();
+  // importedImage.src = `data:image/png;base64,${imageBuffer.toString('base64')}`;
+  // document.querySelector('body').appendChild(importedImage);
+  // imagesInCanvas.push(new fabric.Image(importedImage, {
+  //   left: 0,
+  //   top: 0,
+  //   angle: 0
+  // }));
+  // canvas.renderAll();
 });
 
 function formatBytes(a, b) {
