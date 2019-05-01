@@ -1,5 +1,6 @@
 const FileSaver = require('file-saver');
 const toBlob = require('canvas-toBlob');
+const fs = require('fs');
 
 document.getElementById('fileSelector').addEventListener('change', event => {
   const file = event.target.files[0];
@@ -11,6 +12,18 @@ document.getElementById('fileSelector').addEventListener('change', event => {
   document.querySelector(
     '#fileLastMod'
   ).innerHTML = file.lastModifiedDate.toLocaleString();
+
+  const imageBuffer = fs.readFileSync(file.path);
+  let importedImage = new Image();
+  importedImage.src = `data:image/png;base64,${imageBuffer.toString('base64')}`;
+  document.querySelector('body').appendChild(importedImage);
+  imagesInCanvas.push(new fabric.Image(importedImage, {
+    left: 0,
+    top: 0,
+    angle: 0
+  }));
+  console.log("c", imagesInCanvas);
+  canvas.renderAll();
 });
 
 function formatBytes(a, b) {
@@ -23,7 +36,7 @@ function formatBytes(a, b) {
 }
 
 document.getElementById('savebtn').addEventListener('click', event => {
-    canvasElement.toBlob(function(blob){
-		saveAs(blob, "myIMG.png");
-	});
+  canvasElement.toBlob(function(blob) {
+    saveAs(blob, 'myIMG.png');
+  });
 });
